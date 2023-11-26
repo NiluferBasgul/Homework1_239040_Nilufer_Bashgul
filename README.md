@@ -1,36 +1,49 @@
 # Homework1_239040_Nilufer_Bashgul
 
-## Components
+# Telecom Service Package System
 
-### Model
+This project demonstrates a prototype-based design for creating and configuring telecom service packages.
 
-- **Service:** Represents the basic telecommunication service.
-- **Package:** Represents a package that combines various services.
-- **ServiceConfiguration:** Represents the configuration for a specific service.
+## Overview
 
-### View
+The system is designed to facilitate the creation of telecom service packages with different combinations of services. The Prototype Pattern is utilized to create new packages by cloning existing prototypes.
 
-- **PackageConfigurationView:** View for configuring a package.
-- **ServiceConfigurationView:** View for configuring a service.
+## Classes
 
-### Controller
+### TelecomService
 
-- **PackageController:** Handles user interactions and invokes the `PackageService` to manage packages.
-- **ServiceConfigurationController:** Handles user interactions and invokes the `ServiceConfigurationService` to manage service configurations.
+Base class representing a generic telecom service.
 
-### Service
+### VoiceService
 
-- **PackageService:** Contains business logic for managing packages.
-- **ServiceConfigurationService:** Contains business logic for managing service configurations.
+Specialized class representing a voice service, inheriting from `TelecomService`.
 
-### Repository
+### SmsService
 
-- **PackageRepository:** Handles data access and storage for packages.
-- **ServiceConfigurationRepository:** Handles data access and storage for service configurations.
+Specialized class representing an SMS service, inheriting from `TelecomService`.
+
+### DataService
+
+Specialized class representing a data service, inheriting from `TelecomService`.
+
+### RoamingService
+
+Specialized class representing a roaming service, inheriting from `TelecomService`.
+
+### ServicePackage
+
+Class representing a package of telecom services. Utilizes the Prototype Pattern for easy cloning.
+
+### PackageFactory
+
+Factory class responsible for managing and cloning service package prototypes.
+
+## Main
+
+Example class demonstrating the usage of the classes in the system.
 
 ## Usage
 
-1. Clone the repository.
-2. Open the project in your preferred Java IDE.
-3. Run the `App.java` file to start the application.
-
+1. Create instances of specialized services (`VoiceService`, `SmsService`, etc.).
+2. Create a `ServicePackage` prototype and register it with the `PackageFactory`.
+3. Use the `PackageFactory` to clone the prototype and create new service packages.
