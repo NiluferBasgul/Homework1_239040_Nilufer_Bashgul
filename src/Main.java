@@ -1,17 +1,24 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import Model.*;
+
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        public static void main(String[] args) throws CloneNotSupportedException {
+        ServicePackage prototype = ServicePackage.createPackage("post-paid");
+        prototype.addService(new VoiceService("voice", 3.9, 0.0, 1, 0.0, 0.0, 1, 0.0));
+        prototype.addService(new SmsService("sms", 300.0, 0.0, 5, 10.24, 5.5, 2,2.5));
+        prototype.addService(new DataService("data", 300.0, 0.0, 5, 10.24, 5.5, 4, 1024, 5.2,5,5));
+        PackageFactory.addPrototype(prototype);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Clone a package and display details
+        ServicePackage clonedPackage = PackageFactory.findAndClone("post-paid");
+        if (clonedPackage != null) {
+            System.out.println("Original Package:");
+            prototype.listServices();
+            System.out.println("Total Price: " + prototype.packagePrice());
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            System.out.println("\nCloned Package:");
+            clonedPackage.listServices();
+            System.out.println("Total Price: " + clonedPackage.packagePrice());
         }
+
     }
 }
