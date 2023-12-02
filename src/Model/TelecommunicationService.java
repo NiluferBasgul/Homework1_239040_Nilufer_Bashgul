@@ -1,46 +1,48 @@
 package Model;
 
 public class TelecommunicationService implements Cloneable {
-    private final String serviceName;
-    private final double servicePrice;
-    private final double freeMinutes;
-    private final int unitOfTariffing;
-    private final double pricePerMinute;
-    private final double pricePerCall;
+// implementira interfejsot Clonaeable
+    // Attributes
+    private final String serviceName; // imeto na telekomunikaciska usluga
+    private final double servicePrice; // celokupna cena na uslugata
+    private final double freeMinutes; // brojot na besplatni minuti vkluceni vo uslugata
+    private final double pricePerMinute; // cenata sto se naplakja po dopolnitelna minuta nad besplatni granica
+    private final double pricePerCall; // cenata sto se naplakja za zapocnuvanje na povik
 
     // Constructor
     public TelecommunicationService(String serviceName, double servicePrice, double freeMinutes,
-                          int unitOfTariffing, double pricePerMinute, double pricePerCall) {
+                           double pricePerMinute, double pricePerCall) {
         this.serviceName = serviceName;
         this.servicePrice = servicePrice;
         this.freeMinutes = freeMinutes;
-        this.unitOfTariffing = unitOfTariffing;
         this.pricePerMinute = pricePerMinute;
         this.pricePerCall = pricePerCall;
-    }
+    } // ja inicijalizira telekomunikaciskata usluva so parametri
 
-    // Getters and Setters (add as needed)
-
+    // Methods
     @Override
     public TelecommunicationService clone() throws CloneNotSupportedException {
         return (TelecommunicationService) super.clone();
-    }
+    } // Override metoda za da obezbedi string citliv prikaz na objektot TelecommunicationService
 
     @Override
     public String toString() {
-        return "TelecomService{" +
+        return "TelecommunicationService{" +
                 "serviceName='" + serviceName + '\'' +
                 ", servicePrice=" + servicePrice +
                 ", freeMinutes=" + freeMinutes +
-                ", unitOfTariffing=" + unitOfTariffing +
                 ", pricePerMinute=" + pricePerMinute +
                 ", pricePerCall=" + pricePerCall +
                 '}';
-    }
+    } // Override metoda za da obezbedi string citliv prikaz na objektot TelecommunicationService
 
+    // Getter
     public double getServicePrice() {
         return servicePrice;
-    }
-
-    // Additional methods and overrides as needed
+    } // ja vrakja vkupnata cena na uslugata
 }
+//Odgovornosti:
+//Pretstavuva genericka telekomunikaciska usluga vo telekomunikaciski paket.
+//Nasleduva od klasa TelecommunicationService.
+//Ovozmozhuva kloniranje za sozdavanje kopii od objetki na TelecommunicationService.
+//Usluga  ovnesuvanje vo ramkite na sistemot na paketi na TelecommunicationService.

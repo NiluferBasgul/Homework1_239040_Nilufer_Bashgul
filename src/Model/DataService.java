@@ -1,44 +1,39 @@
 package Model;
 
 public class DataService extends TelecommunicationService {
-    private final int freeDataTransfer;
-    private final int unitOfTariffing;
-    private final double pricePerUnit;
-    private final int maxDownloadSpeed;
-    private final int maxUploadSpeed;
+// nasleduva od klasata TelecommunicationService
+
+    // Attributes
+    private final int freeDataTransfer; //besplaten prenos na potadoci
+    private final double price; //cenata za prenos
 
     // Constructor
     public DataService(String serviceName, double servicePrice, double freeMinutes,
-                       int unitOfTariffing, double pricePerMinute,
+                       double pricePerMinute,
                        double pricePerCall, int freeDataTransfer,
-                       int unitOfTariffingData, double pricePerUnit,
-                       int maxDownloadSpeed, int maxUploadSpeed) {
-        super(serviceName, servicePrice, freeMinutes, unitOfTariffing, pricePerMinute, pricePerCall);
+                       double price) {
+        super(serviceName, servicePrice, freeMinutes, pricePerMinute, pricePerCall);
         this.freeDataTransfer = freeDataTransfer;
-        this.unitOfTariffing = unitOfTariffingData;  // Assuming separate units for data tariffing
-        this.pricePerUnit = pricePerUnit;
-        this.maxDownloadSpeed = maxDownloadSpeed;
-        this.maxUploadSpeed = maxUploadSpeed;
-    }
+        this.price = price;
+    } // go povikuva konstruktorot na osnovnata klasa (TelecommunicationService) za da postavi zaednicki atributi
 
-    // Getters and Setters (add as needed)
-
+    // Methods
     @Override
     public DataService clone() throws CloneNotSupportedException {
         return (DataService) super.clone();
-    }
+    } // Override metoda clone od klasata Object za da ovozmozhi kloniranje na objekti od DataService.
 
     @Override
     public String toString() {
         return "DataService{" +
                 "freeDataTransfer=" + freeDataTransfer +
-                ", unitOfTariffing=" + unitOfTariffing +
-                ", pricePerUnit=" + pricePerUnit +
-                ", maxDownloadSpeed=" + maxDownloadSpeed +
-                ", maxUploadSpeed=" + maxUploadSpeed +
+                ", price=" + price +
                 "} " + super.toString();
-    }
-
-    // Additional methods and overrides as needed
+    } // Override metoda za da obezbedi string citliv prikaz na objektot DataService
 }
+// Odgovornosti:
+//Pretstavuva usluga za podatoci vo telekominakaciski paket.
+//Nasleduva od klasa TelecommunicationService.
+//Ovozmozhuva kloniranje za sozdavanje kopii od objetki na DataService.
+//Usluga za SMS kominikacija, sto go pravi pogoden za korisnici koi potpiraa na tekstualni poraki.
 
