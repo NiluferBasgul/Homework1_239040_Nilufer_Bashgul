@@ -1,16 +1,18 @@
-import Model.*;
+import factory.PackageFactory;
+import model.ServicePackage;
+import service.*;
 
 public class Main {
         public static void main(String[] args) throws CloneNotSupportedException {
 
-        // Kreiranje na prototype na prviot usluzhen paket
-        ServicePackage prototype = ServicePackage.createPackage("post-paid"); //p odgotovka na prototype so kombinacija na servisi
+        // kreiranje na prototype na prviot usluzhen paket
+        ServicePackage prototype = ServicePackage.createPackage("post-paid"); // podgotovka na prototype so kombinacija na servisi
         prototype.addService(new VoiceService("voice", 3.9, 0.0, 1, 0.0,  1, 0.0));
         prototype.addService(new SmsService("sms", 300.0, 0.0, 5, 10.24,  2,2.5));
         prototype.addService(new DataService("data", 300.0, 0.0, 5, 10.24,  4, 1024));
         PackageFactory.addPrototype(prototype);  // dodavanje paketi vo PackageFactory
 
-        // Kreiranje na prototype2 na vtoriot usluzhen paket
+        // kreiranje na prototype2 na vtoriot usluzhen paket
         ServicePackage prototype2 = ServicePackage.createPackage("post-paid"); ; // podgotovka na prototype2 so kombinacija na servisi
         prototype2.addService(new VoiceService("voice1", 2.9, 0.0, 2, 20.0, 1, 0.0));
         prototype2.addService(new SmsService("sms1", 200.0, 0.0, 2, 12.24, 2,3.5));

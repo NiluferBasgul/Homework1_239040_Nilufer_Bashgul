@@ -1,7 +1,7 @@
-package Model;
+package service;
 
 public class TelecommunicationService implements Cloneable {
-// implementira interfejsot Clonaeable
+    // implementira interfejsot Clonaeable
     // Attributes
     private final String serviceName; // imeto na telekomunikaciska usluga
     private final double servicePrice; // celokupna cena na uslugata
@@ -11,7 +11,7 @@ public class TelecommunicationService implements Cloneable {
 
     // Constructor
     public TelecommunicationService(String serviceName, double servicePrice, double freeMinutes,
-                           double pricePerMinute, double pricePerCall) {
+                                    double pricePerMinute, double pricePerCall) {
         this.serviceName = serviceName;
         this.servicePrice = servicePrice;
         this.freeMinutes = freeMinutes;
@@ -41,7 +41,7 @@ public class TelecommunicationService implements Cloneable {
         return servicePrice;
     } // ja vrakja vkupnata cena na uslugata
 }
-//Odgovornosti:
+// Odgovornosti:
 //Pretstavuva genericka telekomunikaciska usluga vo telekomunikaciski paket.
 //Nasleduva od klasa TelecommunicationService.
 //Ovozmozhuva kloniranje za sozdavanje kopii od objetki na TelecommunicationService.

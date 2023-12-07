@@ -1,4 +1,4 @@
-package Model;
+package service;
 
 public class SmsService extends TelecommunicationService {
 // nasleduva od klasata TelecommunicationService
@@ -31,7 +31,7 @@ public class SmsService extends TelecommunicationService {
                 "} " + super.toString();
     } // Override metoda za da obezbedi string citliv prikaz na objektot SmsService
 }
-//Odgovornosti:
+// Odgovornosti:
 //Pretstavuva SMS usluga vo telekomunikaciski paket.
 //Nasleduva od klasa TelecommunicationService.
 //Ovozmozhuva kloniranje za sozdavanje kopii od objetki na RoamingService.

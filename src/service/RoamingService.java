@@ -1,4 +1,4 @@
-package Model;
+package service;
 
 public class RoamingService extends TelecommunicationService {
 // nasleduva od klasata TelecommunicationService

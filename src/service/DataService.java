@@ -1,4 +1,4 @@
-package Model;
+package service;
 
 public class DataService extends TelecommunicationService {
 // nasleduva od klasata TelecommunicationService

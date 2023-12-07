@@ -1,4 +1,4 @@
-package Model;
+package service;
 
 public class VoiceService extends TelecommunicationService {
 // nasleduva od klasata TelecommunicationService
@@ -9,7 +9,7 @@ public class VoiceService extends TelecommunicationService {
 
     // Constructor
     public VoiceService(String serviceName, double servicePrice, double freeMinutes,
-                         double pricePerMinute,
+                        double pricePerMinute,
                         double pricePerCall, int freeSecondsInCall,
                         double pricePerSecond) {
         super(serviceName, servicePrice, freeMinutes, pricePerMinute, pricePerCall);
@@ -31,7 +31,7 @@ public class VoiceService extends TelecommunicationService {
                 "} " + super.toString();
     } // Override metoda za da obezbedi string citliv prikaz na objektot VoiceService
 }
-// Одговорности:
+// Odgovornosti:
 //Pretstavuva usluga za govorna komunikacija vo telekomunikaciski paket.
 //Nasleduva od klasa TelecommunicationService.
 //Ovozmozhuva kloniranje za sozdavanje kopii od objetki na TelecommunicationService.

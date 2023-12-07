@@ -1,11 +1,13 @@
-package Model;
+package factory;
+
+import model.ServicePackage;
 
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class PackageFactory {
     private static final Map<String, ServicePackage> prototypes = new HashMap<>(); // static map sodrzhi primeroci od prototipovi na ServicePackage.
+
     // Methods
     public static void addPrototype(ServicePackage servicePackage) {
         prototypes.put(servicePackage.getName(), servicePackage);
